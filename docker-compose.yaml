@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  builder:
+    build:
+      context: .
+      target: base
+
+  tester:
+    build:
+      context: .
+      target: testing
+
+  runner:
+    build:
+      context: .
+      target: runner

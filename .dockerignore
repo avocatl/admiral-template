@@ -1,0 +1,10 @@
+## Dockerfiles
+docker-compose.{yaml,yml}
+Dockerfile
+.dockerignore
+
+## Metadata files
+*.md
+
+## Github files
+.github
