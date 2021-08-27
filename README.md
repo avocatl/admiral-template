@@ -17,4 +17,32 @@ A template on how we think admiral can be used best.
 └── utils       # global utilities for your implementation
 ```
 
-## Modifiying the binary output.
+## Building your binary
+
+**Docker**
+
+```shell
+make build
+# or
+docker-compose build runner
+```
+
+**Local**
+
+```shell
+go build -o <your binary name> cmd/cli/main.go
+```
+
+## Testing your CLI
+
+**Docker**
+
+```shell
+make test
+```
+
+**Local**
+
+```shell
+go test ./... -v
+```
