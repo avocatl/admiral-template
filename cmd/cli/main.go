@@ -1,6 +1,8 @@
 package main
 
 import (
+	"strings"
+
 	"github.com/avocatl/admiral/pkg/commander"
 	"github.com/spf13/cobra"
 )
@@ -13,7 +15,11 @@ func main() {
 		commander.Config{
 			Namespace: "example",
 			Execute: func(cmd *cobra.Command, args []string) {
-				cmd.Println("Example command.")
+				s := " no args"
+				if len(args) > 0 {
+					s = strings.Join(args, ", ")
+				}
+				cmd.Printf("Example command with %s\n", s)
 			},
 		},
 		commander.NoCols(),

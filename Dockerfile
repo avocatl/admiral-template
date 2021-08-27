@@ -10,11 +10,11 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o admiral-template cmd/cli/main.go
+RUN go build -o cli cmd/cli/main.go
 
 FROM base as testing
 ENTRYPOINT [ "go", "test", "./...", "-v"]
 
 FROM scratch as runner
-COPY --from=base /cli/admiral-template /
-ENTRYPOINT [ "/admiral-template" ]
+COPY --from=base /cli/cli /
+ENTRYPOINT [ "/cli" ]
